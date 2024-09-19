@@ -8,7 +8,7 @@
 <body>
     <h1>THIS WORK IN PROGRESS AND IS NOT TO BE USED</h1>
 
-    <form>
+    <form id="form">
         <label for="name">Name</label>
         <input required type="text" id="name" name="name">
 
@@ -24,11 +24,14 @@
         </select>
         <h4>Additions</h4>
         <div>
-            <input cost="5" type="checkbox" id="simpleBackground">Simple background
-            <input cost="10" type="checkbox" id="complexBackground">Complex background
+            <select id="background" name="background">
+                <option value="none" cost="0">No background</option>
+                <option value="simple" cost="5">Simple background</option>
+                <option value="complex" cost="10">Complex background</option>
+            </select>
             <input cost="5" type="number" id="extraCharacters">Extra Characters
         </div>
-        <p>$<span id="total"></span></p>
+        <p>$<span id="total">0</span></p>
         <input type="submit" value="Submit">
     </form>
     <script src="script/form.js"></script>
