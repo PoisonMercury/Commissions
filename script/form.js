@@ -85,14 +85,13 @@ async function generateImage(event){
     ctx.fillText(formData.name.value, 10, 50);
 
     ctx.font = "20px Arial";
-    ctx.fillText(formData.packageName, 10, canvasHeight/2-10);
-
-
-    ctx.font = "20px Arial";
-    ctx.fillText("Extra Characters - " + formData.additions.extraCharacters.value, 10, canvasHeight-30);
+    ctx.fillText(formData.packageName, 10, canvasHeight-55);
 
     ctx.font = "20px Arial";
-    ctx.fillText("Background - " + formData.additions.background.value, 10, canvasHeight-10);
+    ctx.fillText("Extra Characters - " + formData.additions.extraCharacters.value, 10, canvasHeight-35);
+
+    ctx.font = "20px Arial";
+    ctx.fillText("Background - " + formData.additions.background.value, 10, canvasHeight-15);
 
     ctx.font = "50px Arial";
     ctx.fillText("$"+formData.total, canvasWidth-100, canvasHeight/2+10);
