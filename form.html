@@ -30,13 +30,12 @@
                 <option value="Simple" cost="5">Simple background</option>
                 <option value="Complex" cost="10">Complex background</option>
             </select>
-            <input value="0" cost="5" type="number" id="extraCharacters">Extra Characters
+            <input value="0" cost="5" max="5" type="number" id="extraCharacters">Extra Characters
         </div>
-        <p>$<span id="total">0</span></p>
     </form>
     <canvas width="600px" height="300px" id="canvas">
-        <p>Hello World</p>
-    </canvas>
+    </canvas><br>
+    <button id="export">Export</button>
     <script src="script/form.js"></script>
 </body>
 </html>

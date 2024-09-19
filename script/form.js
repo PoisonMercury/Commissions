@@ -54,6 +54,7 @@ class FormData {
 }
 
 document.getElementById("form").addEventListener("change", generateImage);
+document.getElementById("export").addEventListener("click", downloadImage);
 
 
 /**
@@ -95,4 +96,13 @@ async function generateImage(event){
 
     ctx.font = "50px Arial";
     ctx.fillText("$"+formData.total, canvasWidth-100, canvasHeight/2+10);
+}
+
+async function downloadImage(event){
+    const canvas = document.getElementById("canvas");
+    const canvasData = canvas.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.download = "commission_request.png";
+    link.href = canvasData;
+    link.click();
 }
