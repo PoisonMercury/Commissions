@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style/form.css">
 </head>
 <body>
     <h1>THIS WORK IN PROGRESS AND IS NOT TO BE USED</h1>
 
     <form id="form">
         <label for="name">Name</label>
-        <input required type="text" id="name" name="name">
+        <input type="text" id="name" name="name">
 
         <label for="package">Package</label>
         <select required id="package" name="package">
@@ -25,15 +26,15 @@
         <h4>Additions</h4>
         <div>
             <select id="background" name="background">
-                <option value="none" cost="0">No background</option>
-                <option value="simple" cost="5">Simple background</option>
-                <option value="complex" cost="10">Complex background</option>
+                <option value="None" cost="0">No background</option>
+                <option value="Simple" cost="5">Simple background</option>
+                <option value="Complex" cost="10">Complex background</option>
             </select>
-            <input cost="5" type="number" id="extraCharacters">Extra Characters
+            <input value="0" cost="5" type="number" id="extraCharacters">Extra Characters
         </div>
         <p>$<span id="total">0</span></p>
-        <input type="submit" value="Submit">
     </form>
+    <canvas width="600px" height="300px" id="canvas"></canvas>
     <script src="script/form.js"></script>
 </body>
 </html>
