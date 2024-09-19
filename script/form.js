@@ -93,9 +93,18 @@ async function generateImage(event){
 
     ctx.font = "20px Arial";
     ctx.fillText("Background - " + formData.additions.background.value, 10, canvasHeight-15);
-
+    
     ctx.font = "50px Arial";
-    ctx.fillText("$"+formData.total, canvasWidth-100, canvasHeight/2+10);
+    ctx.textAlign = "right";
+    ctx.fillText("$"+formData.total, canvasWidth-10, canvasHeight/2+10);
+    ctx.textAlign = "left";
+
+    ctx.font = "15px Arial";
+    var dateTime = new Date();
+
+    let dateTimeText = dateTime.toLocaleDateString('en-US', { timeZone: "America/Chicago" }) + " " + dateTime.toLocaleTimeString('en-US', { timeZone: "America/Chicago" });
+    let textWidth = ctx.measureText(dateTimeText).width;
+    ctx.fillText(dateTimeText, canvasWidth - textWidth - 10, canvasHeight - 15);
 }
 
 async function downloadImage(event){
