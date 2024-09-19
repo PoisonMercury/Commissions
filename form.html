@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THIS WORK IN PROGRESS AND IS NOT TO BE USED</h1>
+
+    <form>
+        <label for="name">Name</label>
+        <input required type="text" id="name" name="name">
+
+        <label for="package">Package</label>
+        <select required id="package" name="package">
+            <option cost="5" value="sketch">Sketch</option>
+            <option cost="10" value="headshot">Headshot - Basic</option>
+            <option cost="15" value="headshot-r">Headshot - Render</option>
+            <option cost="20" value="half-body">Half-body - Basic</option>
+            <option cost="25" value="half-body-r">Half-body - Render</option>
+            <option cost="25" value="full-body">Full-body - Basic</option>
+            <option cost="35" value="full-body-r">Full-body - Render</option>
+        </select>
+        <h4>Additions</h4>
+        <div>
+            <input cost="5" type="checkbox" id="simpleBackground">Simple background
+            <input cost="10" type="checkbox" id="complexBackground">Complex background
+            <input cost="5" type="number" id="extraCharacters">Extra Characters
+        </div>
+        <p>$<span id="total"></span></p>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
