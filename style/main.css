@@ -33,5 +33,10 @@
 
 .package img {
     width: 200px;
-    margin: 10px
+    margin: 10px;
+    transition: ease 1s;
+}
+
+.package img:hover {
+    transform: scale(1.1);
 }
