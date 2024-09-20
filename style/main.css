@@ -31,6 +31,10 @@
     margin: 25px;
 }
 
+.package:hover {
+    animation: rainbowOutline 5s infinite;
+}
+
 .package img {
     width: 200px;
     margin: 10px;
@@ -39,4 +43,15 @@
 
 .package img:hover {
     transform: scale(1.1);
+}
+
+@keyframes rainbowOutline {
+    0% { outline: solid red; }
+    14.28% { outline: solid orange; }
+    28.57% { outline: solid yellow; }
+    42.86% { outline: solid green; }
+    57.14% { outline: solid blue; }
+    71.43% { outline: solid indigo; }
+    85.71% { outline: solid violet; }
+    100% { outline: solid red; }
 }
