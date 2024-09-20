@@ -30,6 +30,13 @@
     border-radius: 50px;
     padding: 20px;
     margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.package button {
+    align-self: center;
+    width: 50%;
 }
 
 .package:hover {
