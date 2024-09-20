@@ -16,6 +16,7 @@
 }
 .socialImg {
     height: 100px;
+    cursor: pointer;
 }
 
 .packages {
