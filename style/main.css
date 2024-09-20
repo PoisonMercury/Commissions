@@ -9,10 +9,10 @@
 }
 
 .social {
-    /* TODO: Change Background Color */
-    background-color: rgba(255, 0, 0, 0.587);
+    background-color: var(--color1-50);
+    border-radius: 25px;
     text-align: center;
-    padding: 5px;
+    padding: 15px;
 }
 .socialImg {
     height: 100px;
