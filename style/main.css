@@ -3,6 +3,11 @@
     --color1-50: rgb(from var(--color1) r g b / 0.5)
 }
 
+/* TODO: Header 1 Font */
+h2,h3,h4,h5 {
+    font-family: NoteWorthy;
+}
+
 .socialsDiv {
     display: flex;
     justify-content: space-around;
@@ -62,4 +67,9 @@
     71.43% { outline: solid indigo; }
     85.71% { outline: solid violet; }
     100% { outline: solid red; }
+}
+
+@font-face {
+    font-family: NoteWorthy;
+    src: url(../assets/font/Noteworthy-Lt.ttf);
 }
