@@ -7,9 +7,10 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
 }
-
 h1 {
     font-family: JingleStar;
+    text-align: center;
+    font-size: 75px;
 }
 
 h2,h3,h4,h5 {
@@ -32,6 +33,10 @@ h2,h3,h4,h5 {
     cursor: pointer;
 }
 
+#prices h2 {
+    text-align: center;
+    padding: 20px;
+}
 .packages {
     display: flex;
     justify-content: space-around;
