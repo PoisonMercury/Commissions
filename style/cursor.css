@@ -1,0 +1,16 @@
+.cursor-follower {
+    z-index: -1;
+    position: fixed;
+    pointer-events: none;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.075) 0%,
+        rgba(255, 255, 255, 0.025) 50%,
+        rgba(255, 255, 255, 0) 75%
+    );
+}

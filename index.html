@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="style/main.css">
     <script src="script/main.js"></script>
     <link rel="stylesheet" href="style/stars.css">
+    <link rel="stylesheet" href="style/cursor.css">
     <title>Poison's Commissions</title>
 </head>
 <body>
+    <div class="cursor-follower"></div>
     <div class="stars-container">
         <div id='stars'></div>
         <div id='stars2'></div>
@@ -106,5 +108,13 @@
             </div>
         </section>
     </main>
+    <script>
+        const cursor = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
 </body>
 </html>
