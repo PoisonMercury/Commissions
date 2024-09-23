@@ -119,6 +119,14 @@
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
+
+        document.addEventListener("mouseleave", (e) => {
+            cursor.style.opacity = 0;
+        });
+        document.addEventListener("mouseenter", (e) => {
+            cursor.style.opacity = 1;
+        });
+
     </script>
 </body>
 </html>
