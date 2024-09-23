@@ -4,9 +4,15 @@ class FormData {
      * @type {HTMLSelectElement}
      */
     package;
-    additions = {
+    generalPkg = {
+        style: null,
         background: null,
         extraCharacters: null
+    }
+    png = {
+        style: null,
+        outfits: null,
+        blinking: null,
     }
 
     /**
@@ -19,31 +25,63 @@ class FormData {
         this.name = this.element.elements.name
         this.package = this.element.elements.package
 
-        this.additions.background = this.element.elements.background
-        this.additions.extraCharacters = this.element.elements.extraCharacters
+        this.generalPkg.background = this.element.elements.background
+        this.generalPkg.extraCharacters = this.element.elements.extraCharacters
+        this.generalPkg.style = this.element.elements.style;
+
+        this.png.style = this.element.elements.pngTuber;
+        this.png.outfits = this.element.elements.outfits;
+        this.png.blinking = this.element.elements.blinking;
     }
     
     get total(){
         let total = 0;
         
-        total += this.selectedCost(this.package)
-        total += this.selectedCost(this.additions.background)
+        const packageVal = this.package.value;
 
-        total += this.additions.extraCharacters.value * this.additions.extraCharacters.getAttribute("cost")
-        console.log(total)
-
-        if(total > 0){
-            return total;
+        if(packageVal == "sketch"){
+            return this.selectedCost(this.package);
+        } else if(packageVal == "png-tuber"){
+            return this.calcPng();
         } else {
-            return 0;
+            return this.selectedCost(this.package) + this.calcGeneral();
         }
+        
+
     }
 
     get packageName(){
         return this.package.options[this.package.selectedIndex].text
     }
     
+    get packageDisplayName(){
+        if(this.package.value == "sketch"){
+            return "Sketch";
+        } else if(this.package.value == "png-tuber"){
+            return "PNG Tuber" + " - " + this.png.style.value;
+        } else {
+            return this.package.value + " - " + this.generalPkg.style.value;
+        }
+    }
+    calcGeneral(){
+        let total = 0;
 
+        total += this.selectedCost(this.generalPkg.background);
+        total += this.generalPkg.extraCharacters.value * this.generalPkg.extraCharacters.getAttribute("cost");
+        total += this.selectedCost(this.generalPkg.style);
+        return total;
+    }
+
+    calcPng(){
+        let total = 0;
+        
+        total += this.selectedCost(this.png.style);
+        total += this.png.outfits.value * this.png.outfits.getAttribute("cost");
+        if(this.png.blinking.checked){
+            total += Number.parseInt(this.png.blinking.getAttribute("cost"));
+        }
+        return total;
+    }
     /**
      * @param {HTMLSelectElement} selectElement
      * @private
@@ -65,6 +103,17 @@ function getParams(){
     package.value = params.get("pkg");
 }
 
+function handlePackageChange(event){
+    const formData = new FormData(event.currentTarget);
+    const package = formData.package.value;
+    console.log(package);
+    
+    const pngDiv = document.getElementById("pngDiv");
+    const nonSketch = document.getElementById("nonSketch");
+    pngDiv.hidden = package != "png-tuber"
+    nonSketch.hidden = package == "sketch" || package == "png-tuber";
+}
+
 /**
  * 
  * @param {Event} event 
@@ -73,9 +122,10 @@ async function generateImage(event){
     event.preventDefault();
     event.stopPropagation();
 
+    handlePackageChange(event);
     let formData = new FormData(event.currentTarget);
     console.log(formData);
-
+    console.log(formData.total);
     const canvas = document.getElementById("canvas");
     /** @type {CanvasRenderingContext2D} */
     const ctx = canvas.getContext("2d");
@@ -97,16 +147,17 @@ async function generateImage(event){
     ctx.fillText(formData.name.value, 10, 50);
 
     ctx.font = "20px NoteWorthy";
-    ctx.fillText(formData.packageName, 10, canvasHeight-55);
+    ctx.fillText(formData.packageDisplayName , 10, canvasHeight-55);
 
     ctx.font = "20px NoteWorthy";
-    ctx.fillText("Extra Characters - " + formData.additions.extraCharacters.value, 10, canvasHeight-35);
+    ctx.fillText("Extra Characters - " + formData.generalPkg.extraCharacters.value, 10, canvasHeight-35);
 
     ctx.font = "20px NoteWorthy";
-    ctx.fillText("Background - " + formData.additions.background.value, 10, canvasHeight-15);
+    ctx.fillText("Background - " + formData.generalPkg.background.value, 10, canvasHeight-15);
     
     ctx.font = "50px NoteWorthy";
     ctx.textAlign = "right";
+  
     ctx.fillText("$"+formData.total, canvasWidth-10, canvasHeight/2+10);
     ctx.textAlign = "left";
 

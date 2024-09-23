@@ -13,30 +13,56 @@
     <h1>THIS WORK IN PROGRESS AND IS NOT TO BE USED</h1>
 
     <form id="form">
+        <h4>Info</h4>
         <label for="name">Name</label>
         <input type="text" id="name" name="name">
 
         <label for="package">Package</label>
         <select required id="package" name="package">
             <option cost="5" value="sketch">Sketch</option>
-            <option cost="10" value="headshot">Headshot - Basic</option>
-            <option cost="15" value="headshot-r">Headshot - Render</option>
-            <option cost="20" value="half-body">Half-body - Basic</option>
-            <option cost="25" value="half-body-r">Half-body - Render</option>
-            <option cost="25" value="full-body">Full-body - Basic</option>
-            <option cost="35" value="full-body-r">Full-body - Render</option>
+            <option cost="10" value="headshot">Headshot</option>
+            <option cost="20" value="half-body">Half-body</option>
+            <option cost="25" value="full-body">Full-body</option>
+            <option value="png-tuber">PNG Tuber</option>
         </select>
-        <h4>Additions</h4>
-        <div>
-            <select id="background" name="background">
-                <option value="None" cost="0">No background</option>
-                <option value="Simple" cost="5">Simple background</option>
-                <option value="Complex" cost="10">Complex background</option>
-            </select>
-            <!-- TODO: Update Using New Prices -->
-            <label for="extraCharacters">Extra Characters</label>
-            <input value="0" placeholder="0" cost="5" type="number" id="extraCharacters">
+        <div hidden id="nonSketch">
+            <h4>General</h4>
+            <div>
+                <select id="style">
+                    <option value="basic" cost="0">Basic</option>
+                    <option value="render" cost="5">Render</option>
+                </select>
+            </div>
+            <h4>Additions</h4>
+            <div>
+                <select id="background" name="background">
+                    <option value="None" cost="0">No background</option>
+                    <option value="Simple" cost="5">Simple background</option>
+                    <option value="Complex" cost="10">Complex background</option>
+                </select>
+                <!-- TODO: Update Using New Prices -->
+                <label for="extraCharacters">Extra Characters</label>
+                <input value="0" placeholder="0" cost="5" type="number" id="extraCharacters">
+            </div>
         </div>
+        
+        <div hidden id="pngDiv">
+            <h4>PNG Tuber</h4>
+            <div>
+                <select id="pngTuber" name="pngTuber">
+                    <option cost="5" value="popcat">Popcat</option>
+                    <option cost="20" value="headshot">Headshot</option>
+                    <option cost="25" value="full-body">Full-body</option>
+                </select>
+                <h4>Additions</h4>
+                <!-- TODO: Hide when popcat -->
+                <label for="blinking">Blinking</label>
+                <input cost="5" type="checkbox" id="blinking" name="blinking">
+                <label for="outfits">Additional Outfits</label>
+                <input cost="10" type="number" id="outfits" name="outfits" value="0" placeholder="0">
+            </div>
+        </div>
+        
     </form>
     <canvas width="600px" height="300px" id="canvas">
     </canvas><br>
