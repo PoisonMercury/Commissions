@@ -1,0 +1,75 @@
+.socialsDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social {
+    background-color: var(--color1-50);
+    border-radius: 25px;
+    text-align: center;
+    padding: 15px;
+}
+.socialImg {
+    height: 100px;
+    cursor: pointer;
+}
+
+#prices h2 {
+    text-align: center;
+    padding: 20px;
+}
+.packages {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.package {
+    background-color: var(--color1-50);
+    text-align: center;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.package button {
+    align-self: center;
+    width: 50%;
+}
+
+.package:hover {
+    animation: rainbowOutline 5s infinite;
+}
+
+.package img {
+    width: 200px;
+    margin: 10px;
+    transition: ease 1s;
+}
+
+.package img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes rainbowOutline {
+    0% { outline: solid red; }
+    14.28% { outline: solid orange; }
+    28.57% { outline: solid yellow; }
+    42.86% { outline: solid green; }
+    57.14% { outline: solid blue; }
+    71.43% { outline: solid indigo; }
+    85.71% { outline: solid violet; }
+    100% { outline: solid red; }
+}
+
+@font-face {
+    font-family: NoteWorthy;
+    src: url(../assets/font/Noteworthy-Lt.ttf);
+}
+
+@font-face {
+    font-family: JingleStar;
+    src: url(../assets/font/JingleStar-YzDXv.ttf);
+    font-weight:bold;
+}
