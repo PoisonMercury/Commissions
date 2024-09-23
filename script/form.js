@@ -56,6 +56,14 @@ class FormData {
 document.getElementById("form").addEventListener("change", generateImage);
 document.getElementById("export").addEventListener("click", downloadImage);
 
+document.addEventListener("DOMContentLoaded", getParams);
+function getParams(){
+    let params = new URLSearchParams(window.location.search);
+    
+    const package = document.getElementById("package");
+    if(params.get("pkg") == null) return;
+    package.value = params.get("pkg");
+}
 
 /**
  * 
