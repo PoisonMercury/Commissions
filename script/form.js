@@ -77,7 +77,7 @@ async function generateImage(event){
 
     console.log(canvasWidth, canvasHeight);
 
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "#ff68aa";
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
     // Text
