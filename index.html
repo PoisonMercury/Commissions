@@ -18,9 +18,10 @@
         <section id="about">
             <h2>About Me</h2>
             <!-- TODO: Update About Me -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec metus iaculis orci luctus luctus et imperdiet nulla. Proin porta gravida urna cursus bibendum. Suspendisse ultrices, purus in varius pellentesque, lacus ipsum blandit est, sit amet dictum turpis eros dictum ante. Nunc ligula arcu, dignissim sit amet tellus vulputate, pellentesque efficitur lorem. Curabitur aliquet ipsum nisl, et vestibulum nunc gravida sit amet. Aliquam erat volutpat. Nulla sit amet tellus ligula. Phasellus vitae lacinia nulla.</p>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec metus iaculis orci luctus luctus et imperdiet nulla. Proin porta gravida urna cursus bibendum. Suspendisse ultrices, purus in varius pellentesque, lacus ipsum blandit est, sit amet dictum turpis eros dictum ante. Nunc ligula arcu, dignissim sit amet tellus vulputate, pellentesque efficitur lorem. Curabitur aliquet ipsum nisl, et vestibulum nunc gravida sit amet. Aliquam erat volutpat. Nulla sit amet tellus ligula. Phasellus vitae lacinia nulla.</p>
+            </div>
             <div>
-                <h3>Socials</h3>
                 <div class="socialsDiv">
                     <div class="social">
                         <h4 class="socialTxt">Discord</h4>
@@ -40,84 +41,87 @@
         </section>
         <section id="rules">
             <h2>Rules</h2>
-            I have the right to decline any commission for any reason even if it is not listed here.
-            If needed the price will adjust based on the complexity of the commission, you will be informed of the price before I start the commission.
-            <h3>Will NOT Draw</h3>
-            <div>
-                <ul>
-                    <li>Anything offensive (Racism, Homophobia, Transphobia, Incest, Pedophilia etc.)*</li>
-                    <li>Nothing full on NSFW</li>
-                </ul>
+            <div class="content">
+                I have the right to decline any commission for any reason even if it is not listed here.
+                If needed the price will adjust based on the complexity of the commission, you will be informed of the price before I start the commission.
+                <h3>Will NOT Draw</h3>
+                <div>
+                    <ul>
+                        <li>Anything offensive (Racism, Homophobia, Transphobia, Incest, Pedophilia etc.)*</li>
+                        <li>Nothing full on NSFW</li>
+                    </ul>
+                </div>
+                <h3>Will Draw</h3>
+                <div>
+                    <ul>
+                        <li>Original Characters (OC)</li>
+                        <li>Canon x OC</li>
+                        <li>Humans/People</li>
+                        <li>Robots/Cyborgs</li>
+                        <li>Complex Armor</li>
+                        <li>Monsters/Creatures</li>
+                        <li>Animals <em>(To an extent; feel free to ask)</em></li>
+                        <li>Furries <em>(Not great at it but will try)</em></li>
+                        <li>Injury, Blood and Gore</li>
+                        <li>NSFW <em>(to an extent; feel free to ask)</em></li>
+                    </ul>
+                </div>
             </div>
-            <h3>Will Draw</h3>
-            <div>
-                <ul>
-                    <li>Original Characters (OC)</li>
-                    <li>Canon x OC</li>
-                    <li>Humans/People</li>
-                    <li>Robots/Cyborgs</li>
-                    <li>Complex Armor</li>
-                    <li>Monsters/Creatures</li>
-                    <li>Animals <em>(To an extent; feel free to ask)</em></li>
-                    <li>Furries <em>(Not great at it but will try)</em></li>
-                    <li>Injury, Blood and Gore</li>
-                    <li>NSFW <em>(to an extent; feel free to ask)</em></li>
-                </ul>
-            </div>
+           
         </section>
         <section id="prices">
             <h2>Packages</h2>
             <div class="packages">
-                <div class="package" onclick="selectPkg('sketch')">
+                <div class="package">
                     <h3>Sketch</h3>
                     <p class="price">$5</p>
-                    <img src="https://placehold.co/700x1600">
+                    <img src="https://placehold.co/700x1600" onclick="selectPkg('sketch')">
                 </div>
-                <div class="package" onclick="selectPkg('headshot')">
+                <div class="package">
                     <h3>Headshot</h3>
                     <p class="price">$10 - Flat Color/Basic Shading</p>
                     <p class="price">$15 - Rendering</p>
-                    <img id="hs-img-1" src="https://placehold.co/700x1600" type="Flat Color/Basic Shading">
-                    <img hidden id="hs-img-2" src="https://placehold.co/700x1600/FF0000/000" type="Rendering">
+                    <img id="hs-img-1" src="https://placehold.co/700x1600" type="Flat Color/Basic Shading" onclick="selectPkg('headshot')">
+                    <img hidden id="hs-img-2" src="https://placehold.co/700x1600/FF0000/000" type="Rendering" onclick="selectPkg('headshot-r')">
                     <p>Currently:<br><span id="hs-type">Flat Color/Basic Shading</span></p>
                     <button onclick="swap('hs')">Swap</button>
                 </div>
-                <div class="package" onclick="selectPkg('half-body')">
+                <div class="package">
                     <h3>Half-body</h3>
                     <p class="price">$20 - Flat Color/Basic Shading</p>
                     <p class="price">$25 - Rendering</p>
-                    <img id="hb-img-1" src="https://placehold.co/700x1600" type="Flat Color/Basic Shading">
-                    <img hidden id="hb-img-2" src="https://placehold.co/700x1600/FF0000/000" type="Rendering">
+                    <img id="hb-img-1" src="https://placehold.co/700x1600" type="Flat Color/Basic Shading" onclick="selectPkg('half-body')">
+                    <img hidden id="hb-img-2" src="https://placehold.co/700x1600/FF0000/000" type="Rendering" onclick="selectPkg('half-body-r')">
                     <p>Currently:<br><span id="hb-type">Flat Color/Basic Shading</span></p>
                     <button onclick="swap('hb')">Swap</button>
                 </div>
-                <div class="package" onclick="selectPkg('full-body')">
+                <div class="package">
                     <h3>Full-body</h3>
                     <p class="price">$25 - Flat Color/Basic Shading</p>
                     <p class="price">$35 - Rendering</p>
-                    <img id="fb-img-1" src="https://placehold.co/700x1600" type="Flat Color/Basic Shading">
-                    <img hidden id="fb-img-2" src="https://placehold.co/700x1600/FF0000/000" type="Rendering">
+                    <img id="fb-img-1" src="https://placehold.co/700x1600" type="Flat Color/Basic Shading" onclick="selectPkg('full-body')">
+                    <img hidden id="fb-img-2" src="https://placehold.co/700x1600/FF0000/000" type="Rendering" onclick="selectPkg('full-body-r')">
                     <p>Currently:<br><span id="fb-type">Flat Color/Basic Shading</span></p>
                     <button onclick="swap('fb')">Swap</button>
                 </div>
-                <div class="package" onclick="selectPkg('png-popcat')">
+                <div class="package">
                     <h3>PNG Tuber Popcat</h3>
                     <p class="price">$5</p>
-                    <img src="https://placehold.co/700x700">
+                    <img src="https://placehold.co/700x700" onclick="selectPkg('png-popcat')">
                 </div>
-                <div class="package" onclick="selectPkg('png-headshot')">
+                <div class="package">
                     <h3>PNG Tuber Headshot</h3>
                     <p class="price">$20</p>
-                    <img src="https://placehold.co/700x700">
+                    <img src="https://placehold.co/700x700" onclick="selectPkg('png-headshot')">
                 </div>
-                <div class="package" onclick="selectPkg('png-headshot')">
+                <div class="package">
                     <h3>PNG Tuber Full Body</h3>
                     <p class="price">$25</p>
-                    <img src="https://placehold.co/700x700">
+                    <img src="https://placehold.co/700x700" onclick="selectPkg('png-headshot')">
                 </div>
             </div>
             
-            <div>
+            <div class="content">
                 <h3>Additions</h3>
                 <div>
                     <h4>Backgrounds</h4>

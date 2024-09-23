@@ -46,10 +46,18 @@
     width: 200px;
     margin: 10px;
     transition: ease 1s;
+    cursor: pointer;
 }
 
 .package img:hover {
     transform: scale(1.1);
+}
+
+.content {
+    background-color: var(--color1-50);
+    padding: 30px;
+    border-radius: 50px;
+    margin: 30px;
 }
 
 @keyframes rainbowOutline {
