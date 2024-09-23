@@ -13,3 +13,7 @@ function swap(pkg){
         img2.hidden = false;
     }
 }
+
+function selectPkg(pkg){
+    window.location.href = "form.html"+"?pkg=" + pkg;
+}

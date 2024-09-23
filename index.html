@@ -50,12 +50,12 @@
         <section id="prices">
             <h2>Prices</h2>
             <div class="packages">
-                <div class="package">
+                <div class="package" onclick="selectPkg('sketch')">
                     <h3>Sketch</h3>
                     <p class="price">$5</p>
                     <img src="https://placehold.co/700x1600">
                 </div>
-                <div class="package">
+                <div class="package" onclick="selectPkg('headshot')">
                     <h3>Headshot</h3>
                     <p class="price">$10 - Flat Color/Basic Shading</p>
                     <p class="price">$15 - Rendering</p>
@@ -64,7 +64,7 @@
                     <p>Currently:<br><span id="hs-type">Flat Color/Basic Shading</span></p>
                     <button onclick="swap('hs')">Swap</button>
                 </div>
-                <div class="package">
+                <div class="package" onclick="selectPkg('half-body')">
                     <h3>Half-body</h3>
                     <p class="price">$20 - Flat Color/Basic Shading</p>
                     <p class="price">$25 - Rendering</p>
@@ -73,7 +73,7 @@
                     <p>Currently:<br><span id="hb-type">Flat Color/Basic Shading</span></p>
                     <button onclick="swap('hb')">Swap</button>
                 </div>
-                <div class="package">
+                <div class="package" onclick="selectPkg('full-body')">
                     <h3>Full-body</h3>
                     <p class="price">$25 - Flat Color/Basic Shading</p>
                     <p class="price">$35 - Rendering</p>
