@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/main.css">
     <script src="script/main.js"></script>
+    <script src="script/stars.js"></script>
     <link rel="stylesheet" href="style/stars.css">
     <link rel="stylesheet" href="style/cursor.css">
     <title>Poison's Commissions</title>
 </head>
 <body>
-    <div class="cursor-follower"></div>
-    <div class="stars-container">
-        <div id='stars'></div>
-        <div id='stars2'></div>
-        <div id='stars3'></div>
-    </div>
-
     <header>
         <h1>Poison's Commissions</h1>
     </header>
@@ -112,21 +106,5 @@
             </div>
         </section>
     </main>
-    <script>
-        const cursor = document.querySelector('.cursor-follower');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        document.addEventListener("mouseleave", (e) => {
-            cursor.style.opacity = 0;
-        });
-        document.addEventListener("mouseenter", (e) => {
-            cursor.style.opacity = 1;
-        });
-
-    </script>
 </body>
 </html>
