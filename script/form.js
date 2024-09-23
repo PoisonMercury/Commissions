@@ -81,25 +81,25 @@ async function generateImage(event){
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
     // Text
-    ctx.font = "50px Arial";
+    ctx.font = "50px JingleStar";
     ctx.fillStyle = "white";
     ctx.fillText(formData.name.value, 10, 50);
 
-    ctx.font = "20px Arial";
+    ctx.font = "20px NoteWorthy";
     ctx.fillText(formData.packageName, 10, canvasHeight-55);
 
-    ctx.font = "20px Arial";
+    ctx.font = "20px NoteWorthy";
     ctx.fillText("Extra Characters - " + formData.additions.extraCharacters.value, 10, canvasHeight-35);
 
-    ctx.font = "20px Arial";
+    ctx.font = "20px NoteWorthy";
     ctx.fillText("Background - " + formData.additions.background.value, 10, canvasHeight-15);
     
-    ctx.font = "50px Arial";
+    ctx.font = "50px NoteWorthy";
     ctx.textAlign = "right";
     ctx.fillText("$"+formData.total, canvasWidth-10, canvasHeight/2+10);
     ctx.textAlign = "left";
 
-    ctx.font = "15px Arial";
+    ctx.font = "15px NoteWorthy";
     var dateTime = new Date();
 
     let dateTimeText = dateTime.toLocaleDateString('en-US', { timeZone: "America/Chicago" }) + " " + dateTime.toLocaleTimeString('en-US', { timeZone: "America/Chicago" });
