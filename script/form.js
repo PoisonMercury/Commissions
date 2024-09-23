@@ -77,9 +77,12 @@ async function generateImage(event){
 
     console.log(canvasWidth, canvasHeight);
 
-    ctx.fillStyle = "#ff68aa";
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+    const background = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
+    background.addColorStop(0, "#ff68aa");
+    background.addColorStop(1, "#0000ff");
 
+    ctx.fillStyle = background;
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     // Text
     ctx.font = "50px JingleStar";
     ctx.fillStyle = "white";
