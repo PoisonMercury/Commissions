@@ -60,6 +60,7 @@
     margin: 30px;
 }
 
+
 @keyframes rainbowOutline {
     0% { outline: solid red; }
     14.28% { outline: solid orange; }

@@ -20,7 +20,25 @@ h2,h3,h4,h5 {
     font-family: NoteWorthy;
 }
 
-
+ul > li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+ul > li {
+    margin: 5px;
+}
+ul > li::before {
+    content: '';
+    display: inline-block;
+    background-image: url(../assets/icons/shooting_star.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.5rem;
+}
 
 @font-face {
     font-family: NoteWorthy;
