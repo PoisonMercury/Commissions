@@ -2,3 +2,11 @@
     width: 600px;
     height: 300px;
 }
+
+#result {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    
+}

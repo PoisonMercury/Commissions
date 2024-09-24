@@ -89,6 +89,15 @@ class FormData {
     selectedCost(selectElement){
         return Number.parseInt(selectElement.options[selectElement.selectedIndex].getAttribute("cost"))
     }
+
+    validate(){
+        let valid = true;
+        if(this.name.value == ""){
+            this.name.classList.add("invalid");
+            valid = false;
+        }
+        return valid;
+    }
 }
 
 document.getElementById("form").addEventListener("change", generateImage);
@@ -119,6 +128,7 @@ function handlePackageChange(event){
  * @param {Event} event 
  */
 async function generateImage(event){
+    console.log('Generate Image');
     event.preventDefault();
     event.stopPropagation();
 
@@ -126,6 +136,14 @@ async function generateImage(event){
     let formData = new FormData(event.currentTarget);
     console.log(formData);
     console.log(formData.total);
+    const result = document.getElementById("result");
+
+    if(!formData.validate()){
+        result.style.display = "none";
+        return;
+    }
+    result.style.display = "flex";
+
     const canvas = document.getElementById("canvas");
     /** @type {CanvasRenderingContext2D} */
     const ctx = canvas.getContext("2d");
