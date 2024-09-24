@@ -39,7 +39,12 @@ ul > li::before {
     height: 1.3rem;
     margin-right: 0.5rem;
 }
-
+.content {
+    background-color: var(--color1-50);
+    padding: 30px;
+    border-radius: 50px;
+    margin: 30px;
+}
 @font-face {
     font-family: NoteWorthy;
     src: url(../assets/font/Noteworthy-Lt.ttf);
