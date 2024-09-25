@@ -290,9 +290,19 @@ function starryBackground(canvas, ctx){
         "rgba(192, 128, 255, 0.5)"
     ]
 
+    const backgroundColors =  [
+        ["#ff68aa", "#0000ff"],
+        ["#0000ff", "#ff68aa"],
+        ["#800080", "#FFA500"],
+        ["#FFA500", "#800080"],
+        
+    ]
+
     const background = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
-    background.addColorStop(0, "#ff68aa");
-    background.addColorStop(1, "#0000ff");
+
+    const randomBg = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+    background.addColorStop(0, randomBg[0]);
+    background.addColorStop(1, randomBg[1]);
 
     ctx.fillStyle = background;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
