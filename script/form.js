@@ -157,18 +157,9 @@ async function generateImage(event){
     const canvas = document.getElementById("canvas");
     /** @type {CanvasRenderingContext2D} */
     const ctx = canvas.getContext("2d");
-
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
-
-    console.log(canvasWidth, canvasHeight);
-
-    const background = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
-    background.addColorStop(0, "#ff68aa");
-    background.addColorStop(1, "#0000ff");
-
-    ctx.fillStyle = background;
-    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+    starryBackground(canvas, ctx);
     // Text
     ctx.font = "50px JingleStar";
     ctx.fillStyle = "white";
@@ -207,7 +198,37 @@ async function generateImage(event){
     ctx.fillText(dateTimeText, canvasWidth - textWidth - 10, canvasHeight - 15);
 }
 
-async function downloadImage(event){
+/**
+ * @param {HTMLCanvasElement} canvas
+ * @param {CanvasRenderingContext2D} ctx
+ */
+function starryBackground(canvas, ctx){
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+    const stars = 100;
+
+    const background = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
+    background.addColorStop(0, "#ff68aa");
+    background.addColorStop(1, "#0000ff");
+
+    ctx.fillStyle = background;
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    
+    ctx.fillStyle = "#ffffffaa";
+    ctx.font = "100px";
+
+    for(let i = 0; i < stars; i++){
+        const x = Math.random() * canvasWidth;
+        const y = Math.random() * canvasHeight;
+        const radius = Math.random() * 2;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+    } 
+}
+
+function downloadImage(event){
     const canvas = document.getElementById("canvas");
     const canvasData = canvas.toDataURL("image/png");
     const link = document.createElement("a");
