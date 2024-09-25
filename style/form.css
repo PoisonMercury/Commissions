@@ -8,5 +8,16 @@
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    
+}
+#form {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#form > * {
+    margin: 20px;
+}
+.form-container {
+    width: 40%
 }
