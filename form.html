@@ -20,15 +20,16 @@
 
             <label for="package">Package</label>
             <select required id="package" name="package">
-                <option cost="5" value="sketch">Sketch</option>
-                <option cost="10" value="headshot">Headshot</option>
-                <option cost="20" value="half-body">Half-body</option>
-                <option cost="25" value="full-body">Full-body</option>
+                <option cost="5" value="Sketch">Sketch</option>
+                <option cost="10" value="Headshot">Headshot</option>
+                <option cost="20" value="Half-body">Half-body</option>
+                <option cost="25" value="Full-body">Full-body</option>
                 <option value="png-tuber">PNG Tuber</option>
             </select>
             <div hidden id="nonSketch">
                 <h4>General</h4>
                 <div>
+                    <label for="style">Style</label>
                     <select id="style">
                         <option value="Basic" cost="0">Basic</option>
                         <option value="Render" cost="5">Render</option>
@@ -36,6 +37,7 @@
                 </div>
                 <h4>Additions</h4>
                 <div>
+                    <label for="background">Background</label>
                     <select id="background" name="background">
                         <option value="None" cost="0">No background</option>
                         <option value="Simple" cost="5">Simple background</option>
@@ -43,13 +45,14 @@
                     </select>
                     <!-- TODO: Update Using New Prices -->
                     <label for="extraCharacters">Extra Characters</label>
-                    <input value="0" placeholder="0" cost="5" type="number" id="extraCharacters" max="5" min="0" name="extraCharacters">
+                    <input value="0" placeholder="0" cost="10" type="number" id="extraCharacters" max="5" min="0" name="extraCharacters">
                 </div>
             </div>
             
             <div hidden id="pngDiv">
                 <h4>PNG Tuber</h4>
                 <div>
+                    <label for="pngTuber">Style</label>
                     <select id="pngTuber" name="pngTuber">
                         <option cost="5" value="Popcat">Popcat</option>
                         <option cost="20" value="Headshot">Headshot</option>

@@ -77,7 +77,7 @@ class FormData {
         let total = 0;
 
         total += this.selectedCost(this.generalPkg.background);
-        total += this.generalPkg.extraCharacters.value * this.generalPkg.extraCharacters.getAttribute("cost");
+        total += this.generalPkg.extraCharacters.value * (parseInt(this.generalPkg.extraCharacters.getAttribute("cost")) + (this.package.value == "Full-body" ? 5 : 0));
         total += this.selectedCost(this.generalPkg.style);
         return total;
     }
@@ -143,7 +143,7 @@ function getParams(){
 
 function handlePackageChange(event){
     const formData = new FormData(event.currentTarget);
-    const package = formData.package.value;
+    const package = formData.package.value.toLowerCase();
     console.log(package);
     
     const pngDiv = document.getElementById("pngDiv");
