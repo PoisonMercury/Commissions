@@ -15,6 +15,8 @@ class FormData {
         blinking: null,
     }
 
+    description = "";
+
     /**
      * 
      * @param {HTMLFormElement} element 
@@ -32,6 +34,8 @@ class FormData {
         this.png.style = this.element.elements.pngTuber;
         this.png.outfits = this.element.elements.outfits;
         this.png.blinking = this.element.elements.blinking;
+
+        this.description = this.element.elements.description;
     }
     
     get total(){
@@ -216,6 +220,44 @@ async function generateImage(event){
           
             break;
     }  
+
+    // Description
+
+    const maxWidth = canvasWidth / 1.5;
+    const lineHeight = 25;
+    const words = formData.description.value.split(' ');
+    let line = '';
+    let y = 85;
+
+    let maxLines = 5;
+    let lineCount = 0;
+
+    for (let i = 0; i < words.length; i++) {
+        const testLine = line + words[i] + ' ';
+        const metrics = ctx.measureText(testLine);
+        const testWidth = metrics.width;
+
+        if (testWidth > maxWidth && i > 0) {
+            if (lineCount >= maxLines) {
+                break;
+            }
+            ctx.fillText(line, 10, y);
+            line = words[i] + ' ';
+            y += lineHeight;
+            lineCount++;
+        } else {
+            line = testLine;
+        }
+    }
+    
+    if (line.trim().length > 0 && lineCount < maxLines) {
+        ctx.fillText(line, 10, y);
+    }
+    ctx.fillText(line, 10, y);
+
+
+    // Price
+
     ctx.font = "50px NoteWorthy";
     ctx.textAlign = "right";
   
