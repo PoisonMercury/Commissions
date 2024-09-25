@@ -63,6 +63,16 @@ class FormData {
             return this.package.value + " - " + this.generalPkg.style.value;
         }
     }
+
+    get type(){
+        if(this.package.value == "sketch"){
+            return "Sketch";
+        } else if(this.package.value == "png-tuber"){
+            return "PNG Tuber";
+        } else {
+            return "General";
+        }
+    }
     calcGeneral(){
         let total = 0;
 
@@ -165,14 +175,24 @@ async function generateImage(event){
     ctx.fillText(formData.name.value, 10, 50);
 
     ctx.font = "20px NoteWorthy";
-    ctx.fillText(formData.packageDisplayName , 10, canvasHeight-55);
+    switch(formData.type){
+        case "Sketch":
+            ctx.fillText(formData.packageDisplayName , 10, canvasHeight-15);
+            break;
+        case "PNG Tuber":
+            ctx.fillText(formData.packageDisplayName , 10, canvasHeight-55);
+            ctx.fillText("Blinking - " + (formData.png.blinking.checked ? "Yes" : "No"), 10, canvasHeight-35);
+            ctx.fillText("Additional Outfits - " + formData.png.outfits.value, 10, canvasHeight-15);
+            break;
+        case "General":
+            ctx.fillText(formData.packageDisplayName , 10, canvasHeight-55);
 
-    ctx.font = "20px NoteWorthy";
-    ctx.fillText("Extra Characters - " + formData.generalPkg.extraCharacters.value, 10, canvasHeight-35);
-
-    ctx.font = "20px NoteWorthy";
-    ctx.fillText("Background - " + formData.generalPkg.background.value, 10, canvasHeight-15);
-    
+            ctx.fillText("Extra Characters - " + formData.generalPkg.extraCharacters.value, 10, canvasHeight-35);
+        
+            ctx.fillText("Background - " + formData.generalPkg.background.value, 10, canvasHeight-15);
+          
+            break;
+    }  
     ctx.font = "50px NoteWorthy";
     ctx.textAlign = "right";
   
