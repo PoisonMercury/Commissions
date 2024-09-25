@@ -28,3 +28,10 @@
 .invalid {
     border: 2px solid red;
 }
+
+textarea {
+    width: 75%;
+    resize: vertical;
+    min-height: 35px;
+    max-height: 300px;
+}
