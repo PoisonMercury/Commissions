@@ -105,8 +105,27 @@ class FormData {
         if(this.name.value == ""){
             this.name.classList.add("invalid");
             valid = false;
-        }
+        } else this.name.classList.remove("invalid");
+        valid = this.checkNumber(this.png.outfits) && valid;
+        valid = this.checkNumber(this.generalPkg.extraCharacters) && valid;
         return valid;
+    }
+
+    /**
+     * @private
+     * @param {HTMLInputElement} input 
+     * @returns {Boolean}
+     */
+    checkNumber(input){
+        const max = input.getAttribute("max");
+        const min = input.getAttribute("min");
+        if(input.value > max || input.value < min){
+            input.classList.add("invalid");
+            return false;
+        } else {
+            input.classList.remove("invalid");
+            return true;
+        }
     }
 }
 
@@ -229,6 +248,12 @@ function starryBackground(canvas, ctx){
 }
 
 function downloadImage(event){
+    event.preventDefault();
+    const form = document.getElementById("form");
+    const formData = new FormData(form);
+    if(!formData.validate()){
+        return;
+    }
     const canvas = document.getElementById("canvas");
     const canvasData = canvas.toDataURL("image/png");
     const link = document.createElement("a");

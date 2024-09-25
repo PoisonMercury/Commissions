@@ -21,3 +21,7 @@
 .form-container {
     width: 40%
 }
+
+.invalid {
+    border: 2px solid red;
+}
