@@ -14,6 +14,7 @@ function swap(pkg){
     }
 }
 
-function selectPkg(pkg){
-    window.location.href = "form.html"+"?pkg=" + pkg;
+function selectPkg(pkg, png){
+    const png2 = png ? "&png="+png : "";
+    window.location.href = "form.html"+"?pkg=" + pkg+""+png2;
 }

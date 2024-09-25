@@ -139,8 +139,11 @@ function getParams(){
     let params = new URLSearchParams(window.location.search);
     
     const package = document.getElementById("package");
-    if(params.get("pkg") == null) return;
-    package.value = params.get("pkg");
+    const pkg = params.get("pkg");
+    const png = params.get("png");
+    if(pkg != null) package.value = pkg;
+    if(png != null) document.getElementById("pngTuber").value = png;
+    handlePackageChange({currentTarget: document.getElementById("form")});
 }
 
 function handlePackageChange(event){
@@ -234,7 +237,16 @@ async function generateImage(event){
 function starryBackground(canvas, ctx){
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
-    const stars = 100;
+    const stars = 500;
+
+    const starColors = [
+        "rgba(255, 128, 128, 0.5)",
+        "rgba(255, 192, 128, 0.5)",
+        "rgba(255, 255, 128, 0.5)",
+        "rgba(128, 255, 128, 0.5)",
+        "rgba(128, 128, 255, 0.5)",
+        "rgba(192, 128, 255, 0.5)"
+    ]
 
     const background = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
     background.addColorStop(0, "#ff68aa");
@@ -243,14 +255,14 @@ function starryBackground(canvas, ctx){
     ctx.fillStyle = background;
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-    
-    ctx.fillStyle = "#ffffffaa";
     ctx.font = "100px";
 
     for(let i = 0; i < stars; i++){
         const x = Math.random() * canvasWidth;
         const y = Math.random() * canvasHeight;
+        const i = Math.round(Math.random() * starColors.length);
         const radius = Math.random() * 2;
+        ctx.fillStyle = starColors[i];
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.fill();
