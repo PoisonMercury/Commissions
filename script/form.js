@@ -35,7 +35,6 @@ class FormData {
     }
     
     get total(){
-        let total = 0;
         
         const packageVal = this.package.value;
 
@@ -117,9 +116,10 @@ class FormData {
      * @returns {Boolean}
      */
     checkNumber(input){
-        const max = input.getAttribute("max");
-        const min = input.getAttribute("min");
-        if(input.value > max || input.value < min){
+        const max = Number.parseInt(input.getAttribute("max"));
+        const min = Number.parseInt(input.getAttribute("min"));
+        const value = Number.parseInt(input.value);
+        if(value > max || value < min){
             input.classList.add("invalid");
             return false;
         } else {
@@ -149,6 +149,7 @@ function handlePackageChange(event){
     const pngDiv = document.getElementById("pngDiv");
     const nonSketch = document.getElementById("nonSketch");
     pngDiv.hidden = package != "png-tuber"
+    // TODO: Hide the additions for popcat
     nonSketch.hidden = package == "sketch" || package == "png-tuber";
 }
 
