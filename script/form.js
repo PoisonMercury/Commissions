@@ -54,9 +54,10 @@ class FormData {
     }
     
     get packageDisplayName(){
-        if(this.package.value == "sketch"){
+        const value = this.package.value.toLowerCase();
+        if(value == "sketch"){
             return "Sketch";
-        } else if(this.package.value == "png-tuber"){
+        } else if(value == "png-tuber"){
             return "PNG Tuber" + " - " + this.png.style.value;
         } else {
             return this.package.value + " - " + this.generalPkg.style.value;
@@ -64,9 +65,10 @@ class FormData {
     }
 
     get type(){
-        if(this.package.value == "sketch"){
+        const value = this.package.value.toLowerCase();
+        if(value == "sketch"){
             return "Sketch";
-        } else if(this.package.value == "png-tuber"){
+        } else if(value == "png-tuber"){
             return "PNG Tuber";
         } else {
             return "General";
@@ -144,12 +146,14 @@ function getParams(){
 function handlePackageChange(event){
     const formData = new FormData(event.currentTarget);
     const package = formData.package.value.toLowerCase();
+    const pngStyle = formData.png.style.value;
     console.log(package);
     
     const pngDiv = document.getElementById("pngDiv");
     const nonSketch = document.getElementById("nonSketch");
+    const nonPopcat = document.getElementById("nonPopcat");
     pngDiv.hidden = package != "png-tuber"
-    // TODO: Hide the additions for popcat
+    nonPopcat.hidden = (package == "png-tuber") && pngStyle == "Popcat";
     nonSketch.hidden = package == "sketch" || package == "png-tuber";
 }
 
@@ -191,7 +195,12 @@ async function generateImage(event){
             ctx.fillText(formData.packageDisplayName , 10, canvasHeight-15);
             break;
         case "PNG Tuber":
+            if(formData.png.style.value == "Popcat") {
+                ctx.fillText(formData.packageDisplayName , 10, canvasHeight-15);
+                break;
+            }
             ctx.fillText(formData.packageDisplayName , 10, canvasHeight-55);
+            
             ctx.fillText("Blinking - " + (formData.png.blinking.checked ? "Yes" : "No"), 10, canvasHeight-35);
             ctx.fillText("Additional Outfits - " + formData.png.outfits.value, 10, canvasHeight-15);
             break;
