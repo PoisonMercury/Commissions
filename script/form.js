@@ -14,7 +14,9 @@ class FormData {
         outfits: null,
         blinking: null,
     }
-
+    emoji = {
+        count: null
+    }
     description = "";
 
     /**
@@ -36,16 +38,20 @@ class FormData {
         this.png.blinking = this.element.elements.blinking;
 
         this.description = this.element.elements.description;
+
+        this.emoji.count = this.element.elements.emojiCount;
     }
     
     get total(){
         
-        const packageVal = this.package.value;
+        const packageVal = this.package.value.toLowerCase();
 
         if(packageVal == "sketch"){
             return this.selectedCost(this.package);
         } else if(packageVal == "png-tuber"){
             return this.calcPng();
+        } else if(packageVal == "emoji"){
+            return this.calcEmoji();
         } else {
             return this.selectedCost(this.package) + this.calcGeneral();
         }
@@ -74,6 +80,8 @@ class FormData {
             return "Sketch";
         } else if(value == "png-tuber"){
             return "PNG Tuber";
+        } else if(value == "emoji"){
+            return "Emoji";
         } else {
             return "General";
         }
@@ -95,6 +103,14 @@ class FormData {
         if(this.png.blinking.checked){
             total += Number.parseInt(this.png.blinking.getAttribute("cost"));
         }
+        return total;
+    }
+
+    calcEmoji(){
+        console.log("Calculating emoji");
+        console.log(this.emoji.count.value);
+        let total = 0;
+        total += this.emoji.count.value * Number.parseInt(this.emoji.count.getAttribute("cost"));
         return total;
     }
     /**
@@ -159,9 +175,11 @@ function handlePackageChange(event){
     const pngDiv = document.getElementById("pngDiv");
     const nonSketch = document.getElementById("nonSketch");
     const nonPopcat = document.getElementById("nonPopcat");
+    const emojiDiv  = document.getElementById("emojiDiv");
     pngDiv.hidden = package != "png-tuber"
     nonPopcat.hidden = (package == "png-tuber") && pngStyle == "Popcat";
-    nonSketch.hidden = package == "sketch" || package == "png-tuber";
+    nonSketch.hidden = package == "sketch" || package == "png-tuber" || package == "emoji";
+    emojiDiv.hidden = package != "emoji";
 }
 
 /**
@@ -210,6 +228,10 @@ async function generateImage(event){
             
             ctx.fillText("Blinking - " + (formData.png.blinking.checked ? "Yes" : "No"), 10, canvasHeight-35);
             ctx.fillText("Additional Outfits - " + formData.png.outfits.value, 10, canvasHeight-15);
+            break;
+        case "Emoji":
+            ctx.fillText("Emoji" , 10, canvasHeight-35);
+            ctx.fillText("Emoji Count - " + formData.emoji.count.value, 10, canvasHeight-15);
             break;
         case "General":
             ctx.fillText(formData.packageDisplayName , 10, canvasHeight-55);
