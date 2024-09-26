@@ -129,6 +129,7 @@ class FormData {
         } else this.name.classList.remove("invalid");
         valid = this.checkNumber(this.png.outfits) && valid;
         valid = this.checkNumber(this.generalPkg.extraCharacters) && valid;
+        valid = this.checkNumber(this.emoji.count) && valid;
         return valid;
     }
 
