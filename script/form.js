@@ -231,7 +231,7 @@ async function generateImage(event){
             break;
         case "Emoji":
             ctx.fillText("Emoji" , 10, canvasHeight-35);
-            ctx.fillText("Emoji Count - " + formData.emoji.count.value, 10, canvasHeight-15);
+            ctx.fillText("Total - " + formData.emoji.count.value, 10, canvasHeight-15);
             break;
         case "General":
             ctx.fillText(formData.packageDisplayName , 10, canvasHeight-55);
