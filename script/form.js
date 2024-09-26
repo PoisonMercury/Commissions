@@ -1,19 +1,43 @@
 class FormData {
+    /**
+     * @type {HTMLInputElement}
+     */
     name;
     /**
      * @type {HTMLSelectElement}
      */
     package;
+    /**
+     * @typedef {Object} GeneralPackage
+     * @property {HTMLSelectElement} style
+     * @property {HTMLSelectElement} background
+     * @property {HTMLInputElement} extraCharacters
+     */
+
+    /**@type {GeneralPackage} */
     generalPkg = {
         style: null,
         background: null,
         extraCharacters: null
     }
+    /**
+     * @typedef {Object} PNGTuber
+     * @property {HTMLSelectElement} style
+     * @property {HTMLInputElement} outfits
+     * @property {HTMLInputElement} blinking
+     */
+
+    /**@type {PNGTuber} */
     png = {
         style: null,
         outfits: null,
         blinking: null,
     }
+    /**
+     * @typedef {Object} Emoji
+     * @property {HTMLInputElement} count
+     */
+    /**@type {Emoji} */
     emoji = {
         count: null
     }
@@ -41,6 +65,9 @@ class FormData {
 
         this.emoji.count = this.element.elements.emojiCount;
     }
+    /**
+     * @returns {Number} Total of the package
+     */
     
     get total(){
         
@@ -63,6 +90,9 @@ class FormData {
         return this.package.options[this.package.selectedIndex].text
     }
     
+    /**
+     * @returns {String} The display name of the package
+     */
     get packageDisplayName(){
         const value = this.package.value.toLowerCase();
         if(value == "sketch"){
@@ -74,6 +104,9 @@ class FormData {
         }
     }
 
+    /**
+     * @returns {String} The type of the package
+     */
     get type(){
         const value = this.package.value.toLowerCase();
         if(value == "sketch"){
@@ -86,6 +119,11 @@ class FormData {
             return "General";
         }
     }
+    
+    /**
+     * @private
+     * @returns {Number} The cost of the general package
+     */
     calcGeneral(){
         let total = 0;
 
@@ -95,6 +133,10 @@ class FormData {
         return total;
     }
 
+    /**
+     * @private
+     * @returns {Number} The cost of the PNG Tuber package
+     */
     calcPng(){
         let total = 0;
         
@@ -106,6 +148,10 @@ class FormData {
         return total;
     }
 
+    /**
+     * @private
+     * @returns {Number} The cost of the emoji package
+     */
     calcEmoji(){
         console.log("Calculating emoji");
         console.log(this.emoji.count.value);
@@ -121,6 +167,9 @@ class FormData {
         return Number.parseInt(selectElement.options[selectElement.selectedIndex].getAttribute("cost"))
     }
 
+    /**
+     * @returns {Boolean}
+     */
     validate(){
         let valid = true;
         if(this.name.value == ""){
@@ -167,6 +216,10 @@ function getParams(){
     handlePackageChange({currentTarget: document.getElementById("form")});
 }
 
+/**
+ * 
+ * @param {Event} event 
+ */
 function handlePackageChange(event){
     const formData = new FormData(event.currentTarget);
     const package = formData.package.value.toLowerCase();
@@ -344,6 +397,9 @@ function starryBackground(canvas, ctx){
     } 
 }
 
+/**
+ * @param {Event} event 
+ */
 function downloadImage(event){
     event.preventDefault();
     const form = document.getElementById("form");
