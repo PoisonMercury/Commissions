@@ -28,6 +28,19 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+    .packages {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    .package {
+        width: 50vw;
+        align-items: center;
+    }
 }
 .package {
     background-color: var(--color1-50);
