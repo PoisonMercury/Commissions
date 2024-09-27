@@ -63,10 +63,23 @@
 #about .content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
 }
-#about .content > *:nth-child(1) {
-    width: 50%;
+
+.aboutContent {
+    max-width: 45%;
 }
+
+@media (max-width: 768px) {
+    #about .content {
+        justify-content: center;
+    }
+
+    .aboutContent {
+        max-width: 100%;
+    }
+}
+
 .pfp {
     width: 200px;
     height: 200px;
