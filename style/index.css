@@ -65,6 +65,28 @@
     margin: 10px;
 }
 
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.orderBtn {
+    font-size: 1.5rem;
+    background-color: var(--color1);
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-width: 3px;
+    transition: ease 0.5s;
+}
+
+.orderBtn:hover {
+    scale: 1.1;
+    animation: rainbowOutline 5s infinite;
+}
+
 @keyframes rainbowOutline {
     0% { outline: solid red; }
     14.28% { outline: solid orange; }
