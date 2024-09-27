@@ -1,6 +1,7 @@
 .socialsDiv {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .social {
@@ -9,6 +10,7 @@
     text-align: center;
     padding: 15px;
     box-shadow:  0 0 50px rgba(255, 255, 255, 0.2);
+    margin: 10px;
 }
 .socialImg {
     height: 100px;
@@ -67,6 +69,12 @@
     margin: 10px;
     transition: ease 1s;
     cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+    .package img {
+        width: 50vw;
+    }
+    
 }
 
 .package img:hover {
