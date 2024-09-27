@@ -8,6 +8,7 @@
     border-radius: 25px;
     text-align: center;
     padding: 15px;
+    box-shadow:  0 0 50px rgba(255, 255, 255, 0.2);
 }
 .socialImg {
     height: 100px;
@@ -36,6 +37,7 @@
     margin: 25px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
 }
 
 .package button {
