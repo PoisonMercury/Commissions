@@ -33,7 +33,7 @@
     margin-bottom: 50px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .packages {
         display: flex;
         flex-wrap: nowrap;
