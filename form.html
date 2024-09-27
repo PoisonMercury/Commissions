@@ -12,86 +12,90 @@
     <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <h1>Ordering</h1>
-
-    <div class="content">
-        <h3>Disclaimer</h3>
-        <p>The prices generated here are not a guarantee, and can be changed to be lower or higher. This will be informed before the commission is accepted. Filling this form out does not promise a commission slot. <a href="index.html#rules">Please read the rules before submitting a request.</a></p>
-    </div>
-    <form id="form" class="content">
-        <div class="form-container">
-           <h3>Info</h3>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-
-            <label for="package">Package</label>
-            <select required id="package" name="package">
-                <option cost="5" value="Sketch">Sketch</option>
-                <option cost="10" value="Headshot">Headshot</option>
-                <option cost="20" value="Half-body">Half-body</option>
-                <option cost="25" value="Full-body">Full-body</option>
-                <option value="Emoji">Emoji</option>
-                <option value="png-tuber">PNG Tuber</option>
-            </select>
-            <br>
-            <label for="description">Description</label>
-            <br>
-            <textarea name="description" id="description" ></textarea>
-            <div hidden id="nonSketch">
-                <h3>General</h3>
-                <div>
-                    <label for="style">Style</label>
-                    <select id="style">
-                        <option value="Basic" cost="0">Basic</option>
-                        <option value="Render" cost="5">Render</option>
-                    </select>
-                </div>
-                <h3>Additions</h3>
-                <div>
-                    <label for="background">Background</label>
-                    <select id="background" name="background">
-                        <option value="None" cost="0">No background</option>
-                        <option value="Simple" cost="5">Simple background</option>
-                        <option value="Complex" cost="10">Complex background</option>
-                    </select>
-                    <label for="extraCharacters">Extra Characters</label>
-                    <input value="0" placeholder="0" cost="10" type="number" id="extraCharacters" max="5" min="0" name="extraCharacters">
-                </div>
-            </div>
-            <div hidden id=emojiDiv>
-                <h3>Emoji</h3>
-                <div>
-                    <label for="emojiCount">Total Emojis</label>
-                    <input type="number" id="emojiCount" name="emojiCount" placeholder="5" min="1" max="20" value="5" cost="2">
-                </div>
-            </div>
-            <div hidden id="pngDiv">
-                <h3>PNG Tuber</h3>
-                <div>
-                    <label for="pngTuber">Style</label>
-                    <select id="pngTuber" name="pngTuber">
-                        <option cost="5" value="Popcat">Popcat</option>
-                        <option cost="20" value="Headshot">Headshot</option>
-                        <option cost="25" value="Full-body">Full-body</option>
-                    </select>
-                     <div id="nonPopcat">
-                        <h3>Additions</h3>
-                        <label for="blinking">Blinking</label>
-                        <input cost="5" type="checkbox" id="blinking" name="blinking">
-                        <label for="outfits">Additional Outfits</label>
-                        <input cost="10" type="number" id="outfits" name="outfits" value="0" placeholder="0" min="0" max="10">
-                     </div>
-                </div>
-            </div> 
+    <header>
+        <img src="./assets/icons/favicon.png">
+        <h1>Ordering</h1>
+        <img src="./assets/icons/favicon.png">
+    </header>
+    <main>
+        <div class="content">
+            <h3>Disclaimer</h3>
+            <p>The prices generated here are not a guarantee, and can be changed to be lower or higher. This will be informed before the commission is accepted. Filling this form out does not promise a commission slot. <a href="index.html#rules">Please read the rules before submitting a request.</a></p>
         </div>
-        <div style="width: 600px;">
-            <div style="display: none;" id="result">
-                <canvas width="600px" height="300px" id="canvas">
-                </canvas><br>
-                <button id="export">Export</button>
+        <form id="form" class="content">
+            <div class="form-container">
+            <h3>Info</h3>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <label for="package">Package</label>
+                <select required id="package" name="package">
+                    <option cost="5" value="Sketch">Sketch</option>
+                    <option cost="10" value="Headshot">Headshot</option>
+                    <option cost="20" value="Half-body">Half-body</option>
+                    <option cost="25" value="Full-body">Full-body</option>
+                    <option value="Emoji">Emoji</option>
+                    <option value="png-tuber">PNG Tuber</option>
+                </select>
+                <br>
+                <label for="description">Description</label>
+                <br>
+                <textarea name="description" id="description" ></textarea>
+                <div hidden id="nonSketch">
+                    <h3>General</h3>
+                    <div>
+                        <label for="style">Style</label>
+                        <select id="style">
+                            <option value="Basic" cost="0">Basic</option>
+                            <option value="Render" cost="5">Render</option>
+                        </select>
+                    </div>
+                    <h3>Additions</h3>
+                    <div>
+                        <label for="background">Background</label>
+                        <select id="background" name="background">
+                            <option value="None" cost="0">No background</option>
+                            <option value="Simple" cost="5">Simple background</option>
+                            <option value="Complex" cost="10">Complex background</option>
+                        </select>
+                        <label for="extraCharacters">Extra Characters</label>
+                        <input value="0" placeholder="0" cost="10" type="number" id="extraCharacters" max="5" min="0" name="extraCharacters">
+                    </div>
+                </div>
+                <div hidden id=emojiDiv>
+                    <h3>Emoji</h3>
+                    <div>
+                        <label for="emojiCount">Total Emojis</label>
+                        <input type="number" id="emojiCount" name="emojiCount" placeholder="5" min="1" max="20" value="5" cost="2">
+                    </div>
+                </div>
+                <div hidden id="pngDiv">
+                    <h3>PNG Tuber</h3>
+                    <div>
+                        <label for="pngTuber">Style</label>
+                        <select id="pngTuber" name="pngTuber">
+                            <option cost="5" value="Popcat">Popcat</option>
+                            <option cost="20" value="Headshot">Headshot</option>
+                            <option cost="25" value="Full-body">Full-body</option>
+                        </select>
+                        <div id="nonPopcat">
+                            <h3>Additions</h3>
+                            <label for="blinking">Blinking</label>
+                            <input cost="5" type="checkbox" id="blinking" name="blinking">
+                            <label for="outfits">Additional Outfits</label>
+                            <input cost="10" type="number" id="outfits" name="outfits" value="0" placeholder="0" min="0" max="10">
+                        </div>
+                    </div>
+                </div> 
             </div>
-        </div>
-    </form>
+            <div style="width: 600px;">
+                <div style="display: none;" id="result">
+                    <canvas width="600px" height="300px" id="canvas">
+                    </canvas><br>
+                    <button id="export">Export</button>
+                </div>
+            </div>
+        </form>
+   </main>
     <footer>
         <h4>Copyright © 2024 Poison Mercury & Squibs (TheSquiddyLink) All rights reserved.</h3>
     </footer>

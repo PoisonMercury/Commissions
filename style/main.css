@@ -8,6 +8,16 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
 }
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header > img {
+    height: 75px;
+}
+
 h1 {
     font-family: JingleStar;
     text-align: center;
