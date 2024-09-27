@@ -16,7 +16,7 @@
 }
 
 .shooting-star-container {
-  animation: shootingStar 5s ease-in-out infinite;
+  animation: shootingStar 10s ease-in-out infinite;
 }
 
 .shooting-star {
@@ -30,7 +30,7 @@
    0% {
       transform: translate(150vw, -50vh);
     }
-    25% {
+    10% {
       transform: translate(-50vw, 150vh);
     }
     100% {
