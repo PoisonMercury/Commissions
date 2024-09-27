@@ -1,7 +1,8 @@
 :root {
     --color1: #ff68aa;
     --color2: #ffa1f2;
-    --color1-50: rgb(from var(--color1) r g b / 0.5)
+    --color1-50: rgb(from var(--color1) r g b / 0.5);
+    --accent: #f5cb5c;
 }
 
 body {
