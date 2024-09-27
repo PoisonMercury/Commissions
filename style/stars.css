@@ -15,6 +15,28 @@
   );
 }
 
+.shooting-star-container {
+  animation: shootingStar 5s ease-in-out infinite;
+}
+
+.shooting-star {
+  height: 1px;
+  width: 300px;
+  background-color: white;
+  rotate: var(--angle);
+}
+
+@keyframes shootingStar {
+   0% {
+      transform: translate(150vw, -50vh);
+    }
+    25% {
+      transform: translate(-50vw, 150vh);
+    }
+    100% {
+      transform: translate(-50vw, 150vh);
+    }
+}
 
 /* From: https://codepen.io/sarazond/pen/LYGbwj */
 html {
