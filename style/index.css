@@ -86,6 +86,8 @@ nav {
     border: none;
     border-width: 3px;
     transition: ease 0.5s;
+    color: white;
+    font-family: JingleStar;
 }
 
 .orderBtn:hover {
