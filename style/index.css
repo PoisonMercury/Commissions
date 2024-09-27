@@ -64,7 +64,9 @@
     display: flex;
     justify-content: space-between;
 }
-
+#about .content > *:nth-child(1) {
+    width: 50%;
+}
 .pfp {
     width: 200px;
     height: 200px;
