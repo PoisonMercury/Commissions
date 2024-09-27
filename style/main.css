@@ -45,6 +45,11 @@ ul > li::before {
     border-radius: 50px;
     margin: 30px;
 }
+
+footer {
+    text-align: center;
+}
+
 @font-face {
     font-family: NoteWorthy;
     src: url(../assets/font/Noteworthy-Lt.ttf);
