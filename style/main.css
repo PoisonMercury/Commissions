@@ -1,5 +1,6 @@
 :root {
     --color1: #ff68aa;
+    --color2: #ffa1f2;
     --color1-50: rgb(from var(--color1) r g b / 0.5)
 }
 
@@ -48,6 +49,10 @@ ul > li::before {
 
 footer {
     text-align: center;
+}
+
+a {
+    color: var(--color2);
 }
 
 @font-face {
