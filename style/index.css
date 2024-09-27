@@ -68,6 +68,7 @@
     height: 200px;
     border-radius: 50%;
     margin: 10px;
+    filter: drop-shadow(10px 10px var(--accent));
 }
 
 nav {
