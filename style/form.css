@@ -26,6 +26,13 @@
     width: 40%
 }
 
+@media screen and (max-width: 768px) {
+    .form-container {
+        width: 100%;
+    }
+    
+}
+
 .invalid {
     border: 2px solid red;
 }
