@@ -43,3 +43,23 @@ textarea {
     min-height: 35px;
     max-height: 300px;
 }
+
+/* Inputs */
+
+input,textarea,select {
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(255, 255, 255, 0.301));
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+
+input:hover, textarea:hover, select:hover {
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(255, 131, 181, 0.733))
+}
+option {
+    color: black;
+}
