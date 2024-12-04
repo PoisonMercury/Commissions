@@ -1,7 +1,7 @@
 :root {
     --color1: #ff68aa;
     --color2: #ffa1f2;
-    --color1-50: rgb(from var(--color1) r g b / 0.75);
+    --color1-adj: rgb(from var(--color1) r g b / 0.75);
     --accent: #f5cb5c;
 }
 
@@ -95,7 +95,7 @@ ul > li::before {
     margin-right: 0.5rem;
 }
 .content {
-    background-color: var(--color1-50);
+    background-color: var(--color1-adj);
     box-shadow:  0 0 50px rgba(255, 255, 255, 0.2);
     padding: 30px;
     border-radius: 50px;
