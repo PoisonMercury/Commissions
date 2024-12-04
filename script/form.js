@@ -410,7 +410,7 @@ function downloadImage(event){
     const canvas = document.getElementById("canvas");
     const canvasData = canvas.toDataURL("image/png");
     const link = document.createElement("a");
-    link.download = "commission_request.png";
+    link.download = `${formData.name.value}_commission.png`;
     link.href = canvasData;
     link.click();
 }
