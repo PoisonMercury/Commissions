@@ -77,6 +77,37 @@ a {
     color: var(--color2);
 }
 
+.divider{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.divider > div {
+    width: 90%;
+    height: 5px;
+    background-color: red;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.rainbow {
+    background: linear-gradient(to right, #ff68aa, #ffa1f2, #f5cb5c, #ff68aa);
+    background-size: 200% 200%;
+    animation: rainbowGradient 20s ease infinite;
+}
+@keyframes rainbowGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 @font-face {
     font-family: NoteWorthy;
     src: url(../assets/font/Noteworthy-Lt.ttf);
