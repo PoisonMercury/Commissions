@@ -110,6 +110,14 @@
     filter: drop-shadow(10px 10px var(--accent));
 }
 
+.rules {
+    display: flex;
+    justify-content: space-around;
+}
+.rules > * {
+    width: 45%
+}
+
 @font-face {
     font-family: NoteWorthy;
     src: url(../assets/font/Noteworthy-Lt.ttf);
