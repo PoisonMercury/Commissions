@@ -90,6 +90,7 @@ ul > li::before {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    /* BUG: If "li" is multiple lines the star changes size  */
     width: 1.3rem;
     height: 1.3rem;
     margin-right: 0.5rem;
