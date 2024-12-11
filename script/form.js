@@ -12,13 +12,15 @@ class FormData {
      * @property {HTMLSelectElement} style
      * @property {HTMLSelectElement} background
      * @property {HTMLInputElement} extraCharacters
+     * @property {HTMLInputElement} pose
      */
 
     /**@type {GeneralPackage} */
     generalPkg = {
         style: null,
         background: null,
-        extraCharacters: null
+        extraCharacters: null,
+        pose: null,
     }
     /**
      * @typedef {Object} PNGTuber
@@ -64,6 +66,8 @@ class FormData {
         this.description = this.element.elements.description;
 
         this.emoji.count = this.element.elements.emojiCount;
+
+        this.generalPkg.pose = this.element.elements.pose;
     }
     /**
      * @returns {Number} Total of the package
@@ -130,6 +134,16 @@ class FormData {
         total += this.selectedCost(this.generalPkg.background);
         total += this.generalPkg.extraCharacters.value * (parseInt(this.generalPkg.extraCharacters.getAttribute("cost")) + (this.package.value == "Full-body" ? 5 : 0));
         total += this.selectedCost(this.generalPkg.style);
+        console.log(this.package.value)
+        switch(this.package.value){
+            case "Half-body":
+                total += this.generalPkg.pose.checked ? parseInt(this.generalPkg.pose.getAttribute("cost")) : 0;
+                break;
+            case "Full-body":
+                total += this.generalPkg.pose.checked ? parseInt(this.generalPkg.pose.getAttribute("cost")) + 5 : 0;
+                break;
+        }
+
         return total;
     }
 
@@ -293,7 +307,12 @@ async function generateImage(event){
             ctx.fillText("Extra Characters - " + formData.generalPkg.extraCharacters.value, 10, canvasHeight-35);
         
             ctx.fillText("Background - " + formData.generalPkg.background.value, 10, canvasHeight-15);
-          
+            
+            if(formData.generalPkg.pose.checked){
+                if(["Full-body", "Half-body"].includes(formData.package.value)) ctx.fillText("Complex Pose", 10, canvasHeight-75);
+            }
+            
+
             break;
     }  
 
