@@ -26,6 +26,27 @@
     width: 40%
 }
 
+#export {
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    font-size: larger;
+    border-radius: 100px;
+    transition: scale 0.5s;
+    background-color: var(--color1);
+    border: none;
+    color: white;
+    font-family: JingleStar;
+    filter: drop-shadow(10px 10px var(--accent));
+    transition: filter 1s;
+}
+
+#export:hover {
+    scale: 1.1;
+    animation: rainbowOutline 5s infinite;
+    filter: none;
+}
+
 @media screen and (max-width: 768px) {
     .form-container {
         width: 100%;
