@@ -77,7 +77,6 @@ h2,h3,h4,h5 {
 
 ul > li {
     list-style-type: none;
-    display: flex;
     align-items: center;
 }
 ul > li {
@@ -90,10 +89,10 @@ ul > li::before {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    /* BUG: If "li" is multiple lines the star changes size  */
-    width: 1.3rem;
-    height: 1.3rem;
-    margin-right: 0.5rem;
+    width: 1.3em;
+    height: 1.3em; 
+    margin-right: 0.5em;
+    vertical-align: middle;
 }
 .content {
     background-color: var(--color1-adj);
