@@ -12,6 +12,16 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    #result {
+        width: 85%;
+    }   
+    #discordEmbed {
+        scale: 0.75;
+    }
 }
 #form {
     display: flex;
