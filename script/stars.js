@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     loadStars(3);
 });
 
+window.addEventListener("resize", calculateAngle)
+
 function loadStars(stars){
     console.log("Loading stars");
     const starsContainer = document.createElement("div");
@@ -40,6 +42,7 @@ function loadStars(stars){
     document.querySelector("body").appendChild(starsContainer);
 }
 function calculateAngle() {
+    console.log("Calculating Angle")
     const width = window.innerWidth;
     const height = window.innerHeight;
     const angle = Math.atan2(height, -width) * (180 / Math.PI);
