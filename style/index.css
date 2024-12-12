@@ -50,10 +50,10 @@
     text-align: center;
     border-radius: 50px;
     padding: 20px;
-    margin: 25px;
+    margin: 40px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
 .package button {
@@ -113,9 +113,16 @@
 .rules {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap-reverse;
 }
 .rules > * {
     width: 45%
+}
+
+@media (max-width: 786px){
+    .rules > *{
+        width: 100%;
+    }
 }
 
 @font-face {
